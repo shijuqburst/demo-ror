@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   # GET /users
   # GET /users.xml
+  before_filter :require_user, :except => [:new, :create]
+  
   def index
     @users = User.all
 
@@ -25,7 +27,6 @@ class UsersController < ApplicationController
   # GET /users/new.xml
   def new
     @user = User.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @user }
@@ -74,7 +75,6 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-
     respond_to do |format|
       format.html { redirect_to(users_url) }
       format.xml  { head :ok }
