@@ -1,24 +1,42 @@
-<h1>Users</h1>
-<p id="notice"><%= notice %></p>
-<table>
-  <tr>
-    <th>Username</th>
-    <th>Email</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @users.each do |user| %>
-  <tr>
-    <td><%= user.username %></td>
-    <td><%= user.email %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+<div id='content' class='row-fluid'>
+      <div class='span9 main'>
+        <h1>Users</h1>
+		<p id="notice"><%= notice %></p>
+		<table>
+		  <tr>
+		    <th>Username</th>
+		    <th>Email</th>
+		    <th></th>
+		    <th></th>
+		    <th></th>
+		  </tr>
+		<% @users.each do |user| %>
+		  <tr>
+		    <td><%= user.username %></td>
+		    <td><%= user.email %></td>
+		    <td><%= link_to 'Show', user %></td>
+		    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+		    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+		  </tr>
+		<% end %>
+		</table>
+      </div>
+      <div class='span3 sidebar'>
+        <h4>Recent Posts</h4>
+         <ul class="nav nav-tabs nav-stacked">
+		    <li><a href='#'>Another Link 1</a></li>
+		    <li><a href='#'>Another Link 2</a></li>
+		    <li><a href='#'>Another Link 3</a></li>
+		 </ul>
+      </div>
+</div>
+
+
+
+
+
+
 
 <br />
 
